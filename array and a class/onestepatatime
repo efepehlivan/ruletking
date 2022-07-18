@@ -1,0 +1,138 @@
+
+const winByNumber = function winByNumber(capital) {
+    return capital * 36;
+}
+
+const winByColor = function winByColor(capital) {
+    return capital * 2;
+}
+
+const winByHalfFirst = function winByHalf(capital) {
+    return capital * 2;
+}
+
+const winByHalfSecond = function winByHalf(capital) {
+    return capital * 2;
+}
+
+const winBy12s = function winBy12s(capital) {
+    return capital * 3;
+}
+
+const winByEvenOdd = function winByEvenOdd(capital) {
+    return capital * 2;
+}
+
+const winByRow = function winByRow(capital) {
+    return capital * 3
+}
+
+const winByColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+class rouletteTableNumber {
+    constructor(number, color) {
+        this.number = number
+        this.color = color
+    }
+}
+
+let numberOne = new rouletteTableNumber(1, "black");
+let numberTwo = new rouletteTableNumber(2, "red");
+let numberThree = new rouletteTableNumber(3, "black");
+let numberFour = new rouletteTableNumber(4, "red");
+let numberFive = new rouletteTableNumber(5, "black");
+let numberSix = new rouletteTableNumber(6, "red");
+let numberSeven = new rouletteTableNumber(7, "black");
+let numberEight = new rouletteTableNumber(8, "red");
+let numberNine = new rouletteTableNumber(9, "black");
+let numberTen = new rouletteTableNumber(10, "red");
+let numberEleven = new rouletteTableNumber(11, "black");
+let numberTwelve = new rouletteTableNumber(12, "red");
+let numberThirteen = new rouletteTableNumber(13, "black");
+let numberFourteen = new rouletteTableNumber(14, "red");
+let numberFifteen = new rouletteTableNumber(15, "black");
+let numberSixteen = new rouletteTableNumber(16, "red");
+let numberSeventeen = new rouletteTableNumber(17, "black");
+let numberEighteen = new rouletteTableNumber(18, "red");
+let numberNineteen = new rouletteTableNumber(19, "black");
+let numberTwenty = new rouletteTableNumber(20, "red");
+let numberTwentyOne = new rouletteTableNumber(21, "black");
+let numberTwentyTwo = new rouletteTableNumber(22, "red");
+let numberTwentyThree = new rouletteTableNumber(23, "black");
+let numberTwentyFour = new rouletteTableNumber(24, "red");
+let numberTwentyFive = new rouletteTableNumber(25, "black");
+let numberTwentySix = new rouletteTableNumber(26, "red");
+let numberTwentySeven = new rouletteTableNumber(27, "black");
+let numberTwentyEight = new rouletteTableNumber(28, "red");
+let numberTwentyNine = new rouletteTableNumber(29, "black");
+let numberThirty = new rouletteTableNumber(30, "red");
+let numberThirtyOne = new rouletteTableNumber(31, "black");
+let numberThirtyTwo = new rouletteTableNumber(32, "red");
+let numberThirtyThree = new rouletteTableNumber(33, "black");
+let numberThirtyFour = new rouletteTableNumber(34, "red");
+let numberThirtyFive = new rouletteTableNumber(35, "black");
+let numberThirtySix = new rouletteTableNumber(36, "red");
+
+const rouletteTable = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
+
+const rouletteSpin = Math.floor(Math.random() * rouletteTable.length);
+
+
+let capital = 7;
+let betNumber = numberTwentyEight.number;
+
+
+function result(betNumber, capital, rouletteSpin) {
+    if (betNumber == (rouletteSpin)) {
+        return `win by number = ${winByNumber(capital)} TL`;
+    } else {return `lose = ${capital} TL`}
+}
+
+function result2(betNumber, capital, rouletteSpin) {
+    if ((betNumber <= 18 & !0) && (rouletteSpin <= 18 & !0)) {
+        return `win 1-19 = ${winByHalfFirst(capital)} TL`;
+    } else {return `lose = ${capital} TL`}
+}
+
+function result3(betNumber, capital, rouletteSpin) {
+    if ((betNumber >= 19 & !0) && (rouletteSpin >= 19 & !0)) {
+        return `win 19-36 = ${winByHalfFirst(capital)} TL`;
+    }  else {return `lose = ${capital} TL`}
+}
+
+function result4(betNumber, capital, rouletteSpin) {
+    if ((1 <= betNumber && betNumber <= 12 ) && (1 <= rouletteSpin && rouletteSpin <= 12)) {
+        return `win 1-12 = ${winBy12s(capital)} TL`
+    }  else {return `lose = ${capital} TL`}
+}
+
+
+function result5(betNumber, capital, rouletteSpin) {
+    if ((13 <= betNumber && betNumber <= 24) && (13 <= rouletteSpin && rouletteSpin <= 24)) {
+        return `win 13-24 = ${winBy12s(capital)} TL`
+    }  else {return `lose = ${capital} TL`}
+}
+
+function result6(betNumber, capital, rouletteSpin) {
+    if ((betNumber >= 25) && (rouletteSpin >= 25)) {
+        return `win 25-36 = ${winBy12s(capital)} TL`
+    }  else {return `lose = ${capital} TL`}
+}
+
+console.log(`oynadığın rakam ${betNumber}`)
+console.log(`bet miktarı ${capital}`)
+console.log(`gelen rakam ${rouletteSpin}`)
+
+console.log(result(betNumber, capital, rouletteSpin));
+
+console.log(result2(betNumber, capital, rouletteSpin));
+
+console.log(result3(betNumber, capital, rouletteSpin));
+
+console.log(result4(betNumber, capital, rouletteSpin));
+
+console.log(result5(betNumber, capital, rouletteSpin));
+
+console.log(result6(betNumber, capital, rouletteSpin));

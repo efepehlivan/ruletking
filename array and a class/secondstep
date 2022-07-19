@@ -1,0 +1,185 @@
+const winByNumber = function winByNumber(capital) {
+    return capital * 36;
+}
+
+const winByRed = function winByRed(capital) {
+    return capital * 2;
+}
+
+const winByBlack = function winByBlack(capital) {
+    return capital * 2;
+}
+
+const winByHalfFirst = function winByHalf(capital) {
+    return capital * 2;
+}
+
+const winByHalfSecond = function winByHalf(capital) {
+    return capital * 2;
+}
+
+const winBy12sFirst = function winBy12s(capital) {
+    return capital * 3;
+}
+
+const winBy12sSecond = function winBy12s(capital) {
+    return capital * 3;
+}
+
+const winBy12sThird = function winBy12s(capital) {
+    return capital * 3;
+}
+
+const winByEven = function winByEvenOdd(capital) {
+    return capital * 2;
+}
+
+const winByOdd = function winByEvenOdd(capital) {
+    return capital * 2;
+}
+
+const winBy1stRow = function winByRow(capital) {
+    return capital * 3
+}
+
+const winBy2ndRow = function winByRow(capital) {
+    return capital * 3
+}
+
+const winBy3rdRow = function winByRow(capital) {
+    return capital * 3
+}
+
+const winBy1stColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy2ndColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy3rdColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy4thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy5thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy6thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy7thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy8thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy9thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy10thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy11thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+const winBy12thColumn = function winByColumn(capital) {
+    return capital * 12
+}
+
+
+class rouletteTableNumber {
+    constructor(number, color) {
+        this.number = number
+        this.color = color
+    }
+}
+
+
+let numberZero = new rouletteTableNumber(0, "green");
+let numberOne = new rouletteTableNumber(1, "black");
+let numberTwo = new rouletteTableNumber(2, "red");
+let numberThree = new rouletteTableNumber(3, "black");
+let numberFour = new rouletteTableNumber(4, "red");
+let numberFive = new rouletteTableNumber(5, "black");
+let numberSix = new rouletteTableNumber(6, "red");
+let numberSeven = new rouletteTableNumber(7, "black");
+let numberEight = new rouletteTableNumber(8, "red");
+let numberNine = new rouletteTableNumber(9, "black");
+let numberTen = new rouletteTableNumber(10, "red");
+let numberEleven = new rouletteTableNumber(11, "black");
+let numberTwelve = new rouletteTableNumber(12, "red");
+let numberThirteen = new rouletteTableNumber(13, "black");
+let numberFourteen = new rouletteTableNumber(14, "red");
+let numberFifteen = new rouletteTableNumber(15, "black");
+let numberSixteen = new rouletteTableNumber(16, "red");
+let numberSeventeen = new rouletteTableNumber(17, "black");
+let numberEighteen = new rouletteTableNumber(18, "red");
+let numberNineteen = new rouletteTableNumber(19, "black");
+let numberTwenty = new rouletteTableNumber(20, "red");
+let numberTwentyOne = new rouletteTableNumber(21, "black");
+let numberTwentyTwo = new rouletteTableNumber(22, "red");
+let numberTwentyThree = new rouletteTableNumber(23, "black");
+let numberTwentyFour = new rouletteTableNumber(24, "red");
+let numberTwentyFive = new rouletteTableNumber(25, "black");
+let numberTwentySix = new rouletteTableNumber(26, "red");
+let numberTwentySeven = new rouletteTableNumber(27, "black");
+let numberTwentyEight = new rouletteTableNumber(28, "red");
+let numberTwentyNine = new rouletteTableNumber(29, "black");
+let numberThirty = new rouletteTableNumber(30, "red");
+let numberThirtyOne = new rouletteTableNumber(31, "black");
+let numberThirtyTwo = new rouletteTableNumber(32, "red");
+let numberThirtyThree = new rouletteTableNumber(33, "black");
+let numberThirtyFour = new rouletteTableNumber(34, "red");
+let numberThirtyFive = new rouletteTableNumber(35, "black");
+let numberThirtySix = new rouletteTableNumber(36, "red");
+
+
+const rouletteTable = [numberZero, numberOne, numberTwo, numberThree, numberFour,
+    numberFive, numberSix, numberSeven, numberEight, numberNine, numberTen, numberEleven,
+    numberTwelve, numberThirteen, numberFourteen, numberFifteen, numberSixteen, numberSeventeen, numberEighteen,
+    numberNineteen, numberTwenty, numberTwentyOne, numberTwentyTwo, numberTwentyThree, numberTwentyFour, numberTwentyFive,
+    numberTwentySix, numberTwentySeven, numberTwentyEight, numberTwentyNine, numberThirty, numberThirtyOne, numberThirtyTwo,
+    numberThirtyThree, numberThirtyFour, numberThirtyFive, numberThirtySix]
+
+const rouletteSpin = Math.floor(Math.random() * rouletteTable.length);
+const winnerNumber = rouletteTable[rouletteSpin]
+
+const showSpinNumber = console.log(winnerNumber.number)
+const showSpinColor = console.log(winnerNumber.color)
+
+let bet = numberThirteen
+let capital = 10
+
+function betOnNumber(bet, capital, winnerNumber) {
+    if (bet.number === winnerNumber.number) {
+        return `kazandın ${winByNumber(capital)}`
+    }
+}
+
+function betOnRed(bet, capital, winnerNumber) {
+    if (bet.color === winnerNumber.color) {
+        return `kazandın ${winByRed(capital)}`
+    } else if (bet.color !== winnerNumber.color){
+        return 
+    }
+}
+
+
+
+console.log(bet.color)
+console.log(winnerNumber.color)
+
+console.log(betOnRed(bet, capital, winnerNumber))
+console.log(betOnNumber(bet, capital, winnerNumber))
